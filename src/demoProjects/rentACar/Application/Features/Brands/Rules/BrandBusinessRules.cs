@@ -25,5 +25,10 @@ namespace Application.Features.Brands.Rules
             //eğer data varsa businessexception fırlatacak.
             if (result.Items.Any()) throw new BusinessException("Brand name exists.");
         }
+        public void BrandShouldExistWhenRequested(Brand brand)
+        {
+            //eğer data varsa businessexception fırlatacak.
+            if (brand==null) throw new BusinessException("Requested brand does not exist");
+        }
     }
 }
